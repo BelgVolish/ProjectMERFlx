@@ -22,7 +22,7 @@ public class MapEditorParentCommand : ParentCommand
 
 	public override string Command => "mapeditor";
 
-	public override string[] Aliases { get; } = ["mer", "mp"];
+	public override string[] Aliases { get; } = { "mer", "mp" };
 
 	public override string Description => "The MapEditorReborn parent command";
 

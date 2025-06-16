@@ -17,7 +17,7 @@ public class Select : ICommand
 	public string Command => "select";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = ["sel", "choose"];
+	public string[] Aliases { get; } = {"sel", "choose"};
 
 	/// <inheritdoc/>
 	public string Description => "Selects the object which you are looking at.";

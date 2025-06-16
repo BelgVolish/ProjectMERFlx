@@ -12,7 +12,7 @@ public class Merge : ICommand
 	public string Command => "merge";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = [];
+	public string[] Aliases { get; } = {"tg"};
 
 	/// <inheritdoc/>
 	public string Description => "Merges two or more maps into one.";

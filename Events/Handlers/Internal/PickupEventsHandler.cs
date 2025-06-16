@@ -11,8 +11,8 @@ namespace ProjectMER.Events.Handlers.Internal;
 
 public class PickupEventsHandler : CustomEventsHandler
 {
-	internal static readonly Dictionary<ushort, SchematicObject> ButtonPickups = [];
-	internal static readonly Dictionary<ushort, int> PickupUsesLeft = [];
+	internal static readonly Dictionary<ushort, SchematicObject> ButtonPickups = new Dictionary<ushort, SchematicObject>();
+	internal static readonly Dictionary<ushort, int> PickupUsesLeft = new Dictionary<ushort, int>();
 
 	public override void OnPlayerSearchingPickup(PlayerSearchingPickupEventArgs ev)
 	{

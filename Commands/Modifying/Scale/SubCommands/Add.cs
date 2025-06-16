@@ -14,7 +14,7 @@ public class Add : ICommand
 	public string Command => "add";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = [];
+	public string[] Aliases { get; } = Array.Empty<string>();
 
 	/// <inheritdoc/>
 	public string Description => string.Empty;

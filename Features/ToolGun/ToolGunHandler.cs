@@ -12,7 +12,7 @@ namespace ProjectMER.Features.ToolGun;
 
 public static class ToolGunHandler
 {
-	public static Dictionary<Player, MapEditorObject> PlayerSelectedObjectDict { get; private set; } = [];
+	public static Dictionary<Player, MapEditorObject> PlayerSelectedObjectDict { get; private set; } = new Dictionary<Player, MapEditorObject>();
 
 	public static void CreateObject(Player player, ToolGunObjectType objectType, string schematicName = "")
 	{
@@ -56,7 +56,7 @@ public static class ToolGunHandler
 			case SerializableSchematic serializableSchematic:
 				{
 					serializableObject.Position = position;
-					serializableSchematic.SchematicName = schematicName!;
+					serializableSchematic.SchematicName = schematicName;
 					break;
 				}
 

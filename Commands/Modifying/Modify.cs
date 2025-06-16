@@ -24,8 +24,7 @@ public class Modify : ICommand
 	public string Command => "modify";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = ["mod"];
-
+	public string[] Aliases { get; } = {"mod"};
 	/// <inheritdoc/>
 	public string Description => "Allows modifying properties of the selected object.";
 
@@ -183,7 +182,7 @@ public class Modify : ICommand
 							try
 							{
 								object value = TypeDescriptor.GetConverter(listType).ConvertFromInvariantString(arguments.At(i));
-								foundProperty.PropertyType.GetMethod("Add").Invoke(listInstance, [value]);
+								foundProperty.PropertyType.GetMethod("Add").Invoke(listInstance, new object[]{value});
 							}
 							catch (Exception)
 							{
@@ -202,7 +201,7 @@ public class Modify : ICommand
 							try
 							{
 								object value = TypeDescriptor.GetConverter(listType).ConvertFromInvariantString(arguments.At(i));
-								foundProperty.PropertyType.GetMethod("Remove").Invoke(listInstance, [value]);
+								foundProperty.PropertyType.GetMethod("Remove").Invoke(listInstance, new[]{value});
 							}
 							catch (Exception)
 							{

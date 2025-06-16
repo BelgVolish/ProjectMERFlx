@@ -15,7 +15,7 @@ public class Bring : ICommand
 	public string Command => "bring";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = [];
+	public string[] Aliases { get; } = Array.Empty<string>();
 
 	/// <inheritdoc/>
 	public string Description => "Brings an object to player's position.";

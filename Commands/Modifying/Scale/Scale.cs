@@ -16,7 +16,7 @@ public class Scale : ParentCommand
 	public override string Command => "scale";
 
 	/// <inheritdoc/>
-	public override string[] Aliases { get; } = ["scl"];
+	public override string[] Aliases { get; } = {"scl"};
 
 	/// <inheritdoc/>
 	public override string Description => "Modifies object's scale.";

@@ -17,7 +17,7 @@ public class List : ICommand
 	public string Command => "list";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = ["li", "ls"];
+	public string[] Aliases { get; } = {"li", "ls"};
 
 	/// <inheritdoc/>
 	public string Description => "Shows the list of all available maps.";

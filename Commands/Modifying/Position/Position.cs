@@ -19,7 +19,7 @@ public class Position : ParentCommand
 	public override string Command => "position";
 
 	/// <inheritdoc/>
-	public override string[] Aliases { get; } = ["pos"];
+	public override string[] Aliases { get; } = {"pos"};
 
 	/// <inheritdoc/>
 	public override string Description => "Modifies object's posistion.";

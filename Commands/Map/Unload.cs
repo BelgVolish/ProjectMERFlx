@@ -8,7 +8,7 @@ public class Unload : ICommand
 {
 	public string Command => "unload";
 
-	public string[] Aliases => ["unl"];
+	public string[] Aliases => new []{"unl"};
 
 	public string Description => "Unloads a map";
 

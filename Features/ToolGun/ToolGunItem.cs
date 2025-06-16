@@ -14,7 +14,7 @@ namespace ProjectMER.Features.ToolGun;
 
 public class ToolGunItem
 {
-	public static Dictionary<ushort, ToolGunItem> ItemDictionary { get; private set; } = [];
+	public static Dictionary<ushort, ToolGunItem> ItemDictionary { get; private set; } = new Dictionary<ushort, ToolGunItem>();
 
 	public static Dictionary<ToolGunObjectType, Type> TypesDictionary { get; private set; } = new()
 	{
@@ -78,11 +78,11 @@ public class ToolGunItem
 		ItemDictionary.Add(toolgun.ItemSerial, new ToolGunItem(toolgun));
 
 		ServerSpecificSettingsSync.SendOnJoinFilter = (_) => false; // Prevent all users from receiving the tools after joining the server.
-		ServerSpecificSettingsSync.DefinedSettings =
-		[
+		ServerSpecificSettingsSync.DefinedSettings = new ServerSpecificSettingBase[]
+		{
 			new SSGroupHeader("MapEditorReborn"),
 			new SSDropdownSetting(0, "Schematic Name", MapUtils.GetAvailableSchematicNames())
-		];
+		};
 
 		ServerSpecificSettingsSync.SendToPlayersConditionally(x => x.inventory.UserInventory.Items.Values.Any(x => x.IsToolGun(out ToolGunItem _)));
 

@@ -26,7 +26,7 @@ public class GenericEventsHandler : CustomEventsHandler
 		if (!ev.UseSpawnPoint)
 			return;
 
-		List<MapEditorObject> list = [];
+		List<MapEditorObject> list = new List<MapEditorObject>();
 		foreach (MapSchematic map in MapUtils.LoadedMaps.Values)
 		{
 			foreach (KeyValuePair<string, SerializablePlayerSpawnpoint> spawnpoint in map.PlayerSpawnpoints)

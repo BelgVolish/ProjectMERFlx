@@ -7,7 +7,7 @@ namespace ProjectMER.Features.Objects;
 
 public class IndicatorObject : MapEditorObject
 {
-	public static Dictionary<IndicatorObject, MapEditorObject> Dictionary = [];
+	public static Dictionary<IndicatorObject, MapEditorObject> Dictionary = new Dictionary<IndicatorObject, MapEditorObject>();
 
 	public static bool TrySpawnOrUpdateIndicator(MapEditorObject mapEditorObject)
 	{

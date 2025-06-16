@@ -53,11 +53,8 @@ public class MapEditorObject : MonoBehaviour
 			return;
 		}
 
-		foreach (MapEditorObject copy in Map.SpawnedObjects.ToList())
+		foreach (var copy in Map.SpawnedObjects.ToList().Where(copy => copy.Id == Id))
 		{
-			if (copy.Id != Id)
-				continue;
-
 			copy.UpdateCopy();
 		}
 	}

@@ -17,10 +17,7 @@ public static class ObjectSpawner
 	public static SchematicObject SpawnSchematic(SerializableSchematic serializableSchematic)
 	{
 		GameObject? gameObject = serializableSchematic.SpawnOrUpdateObject();
-		if (gameObject == null)
-			return null!;
-
-		return gameObject.GetComponent<SchematicObject>();
+		return gameObject == null ? null! : gameObject.GetComponent<SchematicObject>();
 	}
 
 	public static SchematicObject SpawnSchematic(string schematicName, Vector3 position) =>

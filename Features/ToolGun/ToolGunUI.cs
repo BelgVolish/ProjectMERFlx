@@ -21,7 +21,7 @@ public static class ToolGunUI
 
 		int offset = 0;
 		object instance = null!;
-		List<PropertyInfo> properties = [];
+		List<PropertyInfo> properties = new List<PropertyInfo>();
 		if (ToolGunHandler.TryGetSelectedMapObject(player, out MapEditorObject mapEditorObject) && mapEditorObject != null)
 		{
 			instance = mapEditorObject.GetType().GetField("Base").GetValue(mapEditorObject);

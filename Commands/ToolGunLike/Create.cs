@@ -18,7 +18,7 @@ public class Create : ICommand
 	public string Command => "create";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = ["cr", "spawn"];
+	public string[] Aliases { get; } = {"cr", "spawn"};
 
 	/// <inheritdoc/>
 	public string Description => "Creates a selected object at the point you are looking at.";

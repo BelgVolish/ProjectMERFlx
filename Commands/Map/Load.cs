@@ -8,7 +8,7 @@ public class Load : ICommand
 {
 	public string Command => "load";
 
-	public string[] Aliases => ["l"];
+	public string[] Aliases => new []{"l"};
 
 	public string Description => "Loads a map";
 

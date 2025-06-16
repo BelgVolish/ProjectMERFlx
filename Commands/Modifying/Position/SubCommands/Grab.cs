@@ -17,7 +17,7 @@ public class Grab : ICommand
 {
 	public string Command => "grab";
 
-	public string[] Aliases => [];
+	public string[] Aliases => Array.Empty<string>();
 
 	public string Description => "Grabs an object.";
 
@@ -99,5 +99,5 @@ public class Grab : ICommand
 	/// <summary>
 	/// The <see cref="Dictionary{TKey, TValue}"/> which contains all <see cref="Player"/> and <see cref="CoroutineHandle"/> pairs.
 	/// </summary>
-	private static readonly Dictionary<Player, CoroutineHandle> GrabbingPlayers = [];
+	private static readonly Dictionary<Player, CoroutineHandle> GrabbingPlayers = new Dictionary<Player, CoroutineHandle>();
 }

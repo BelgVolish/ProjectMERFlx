@@ -19,7 +19,7 @@ public class Rotation : ParentCommand
 	public override string Command => "rotation";
 
 	/// <inheritdoc/>
-	public override string[] Aliases { get; } = ["rot"];
+	public override string[] Aliases { get; } = {"rot"};
 
 	/// <inheritdoc/>
 	public override string Description => "Modifies object's rotation.";

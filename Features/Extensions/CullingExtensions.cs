@@ -45,7 +45,11 @@ public static class CullingExtensions
 	/// <param name="player">The target.</param>
 	/// <param name="networkIdentity">The network identity to spawn.</param>
 	public static void SpawnNetworkIdentity(this Player player, NetworkIdentity networkIdentity) =>
-		SendSpawnMessage.Invoke(null, [networkIdentity, player.Connection]);
+		SendSpawnMessage.Invoke(null, new object[]
+		{
+			networkIdentity,
+			player.Connection
+		});
 
 	/// <summary>
 	/// Destroys the given <paramref name="networkIdentity"/> for the specified <paramref name="player"/>.

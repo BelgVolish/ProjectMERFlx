@@ -12,7 +12,7 @@ namespace ProjectMER.Features.Serializable;
 
 public class SerializablePlayerSpawnpoint : SerializableObject, IIndicatorDefinition
 {
-	public List<RoleTypeId> Roles { get; set; } = [];
+	public List<RoleTypeId> Roles { get; set; } = new List<RoleTypeId>();
 
 	[YamlIgnore]
 	public override Vector3 Scale { get; set; }

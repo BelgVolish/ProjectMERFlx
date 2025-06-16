@@ -8,7 +8,7 @@ public class Save : ICommand
 {
 	public string Command => "save";
 
-	public string[] Aliases => ["s"];
+	public string[] Aliases => new []{"s"};
 
 	public string Description => "Saves a map";
 

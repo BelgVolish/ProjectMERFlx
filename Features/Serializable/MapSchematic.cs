@@ -21,31 +21,31 @@ public class MapSchematic
 
 	public bool IsDirty;
 
-	public Dictionary<string, SerializablePrimitive> Primitives { get; set; } = [];
+	public Dictionary<string, SerializablePrimitive> Primitives { get; set; } = new Dictionary<string, SerializablePrimitive>();
 
-	public Dictionary<string, SerializableLight> Lights { get; set; } = [];
+	public Dictionary<string, SerializableLight> Lights { get; set; } = new Dictionary<string, SerializableLight>();
 
-	public Dictionary<string, SerializableDoor> Doors { get; set; } = [];
+	public Dictionary<string, SerializableDoor> Doors { get; set; } = new Dictionary<string, SerializableDoor>();
 
-	public Dictionary<string, SerializableWorkstation> Workstations { get; set; } = [];
+	public Dictionary<string, SerializableWorkstation> Workstations { get; set; } = new Dictionary<string, SerializableWorkstation>();
 
-	public Dictionary<string, SerializableItemSpawnpoint> ItemSpawnpoints { get; set; } = [];
+	public Dictionary<string, SerializableItemSpawnpoint> ItemSpawnpoints { get; set; } = new Dictionary<string, SerializableItemSpawnpoint>();
 
-	public Dictionary<string, SerializablePlayerSpawnpoint> PlayerSpawnpoints { get; set; } = [];
+	public Dictionary<string, SerializablePlayerSpawnpoint> PlayerSpawnpoints { get; set; } = new Dictionary<string, SerializablePlayerSpawnpoint>();
 
-	public Dictionary<string, SerializableCapybara> Capybaras { get; set; } = [];
+	public Dictionary<string, SerializableCapybara> Capybaras { get; set; } = new Dictionary<string, SerializableCapybara>();
 
-	public Dictionary<string, SerializableText> Texts { get; set; } = [];
+	public Dictionary<string, SerializableText> Texts { get; set; } = new Dictionary<string, SerializableText>();
 
-	public Dictionary<string, SerializableScp079Camera> Scp079Cameras { get; set; } = [];
+	public Dictionary<string, SerializableScp079Camera> Scp079Cameras { get; set; } = new Dictionary<string, SerializableScp079Camera>();
 
-	public Dictionary<string, SerializableShootingTarget> ShootingTargets { get; set; } = [];
+	public Dictionary<string, SerializableShootingTarget> ShootingTargets { get; set; } = new Dictionary<string, SerializableShootingTarget>();
 
-	public Dictionary<string, SerializableSchematic> Schematics { get; set; } = [];
+	public Dictionary<string, SerializableSchematic> Schematics { get; set; } = new Dictionary<string, SerializableSchematic>();
 
-	public Dictionary<string, SerializableTeleport> Teleports { get; set; } = [];
+	public Dictionary<string, SerializableTeleport> Teleports { get; set; } = new Dictionary<string, SerializableTeleport>();
 
-	public List<MapEditorObject> SpawnedObjects = [];
+	public List<MapEditorObject> SpawnedObjects = new List<MapEditorObject>();
 
 	public MapSchematic Merge(MapSchematic other)
 	{
@@ -72,28 +72,28 @@ public class MapSchematic
 
 		SpawnedObjects.Clear();
 
-		Primitives.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		Lights.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		Doors.ForEach(kVP =>
+		Primitives.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		Lights.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		Doors.ForEach(kvp =>
 		{
-			Door? vanillaDoor = Door.Get(kVP.Key);
+			Door? vanillaDoor = Door.Get(kvp.Key);
 			if (vanillaDoor != null)
 			{
-				kVP.Value.SetupDoor(vanillaDoor.Base);
+				kvp.Value.SetupDoor(vanillaDoor.Base);
 				return;
 			}
 
-			SpawnObject(kVP.Key, kVP.Value);
+			SpawnObject(kvp.Key, kvp.Value);
 		});
-		Workstations.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		ItemSpawnpoints.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		PlayerSpawnpoints.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		Capybaras.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		Texts.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		Schematics.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		Scp079Cameras.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		ShootingTargets.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
-		Teleports.ForEach(kVP => SpawnObject(kVP.Key, kVP.Value));
+		Workstations.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		ItemSpawnpoints.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		PlayerSpawnpoints.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		Capybaras.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		Texts.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		Schematics.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		Scp079Cameras.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		ShootingTargets.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
+		Teleports.ForEach(kvp => SpawnObject(kvp.Key, kvp.Value));
 	}
 
 	public void SpawnObject<T>(string id, T serializableObject) where T : SerializableObject

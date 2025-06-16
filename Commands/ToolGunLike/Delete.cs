@@ -12,7 +12,7 @@ public class Delete : ICommand
 	public string Command => "delete";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = ["del", "remove", "rm"];
+	public string[] Aliases { get; } = {"del", "remove", "rm"};
 
 	/// <inheritdoc/>
 	public string Description => "Deletes the object which you are looking at.";

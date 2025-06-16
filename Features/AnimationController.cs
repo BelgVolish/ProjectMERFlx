@@ -16,7 +16,7 @@ public class AnimationController
 	{
 		AttachedSchematic = schematic;
 
-		List<Animator> list = [];
+		List<Animator> list = new List<Animator>();
 		foreach (GameObject gameObject in schematic.AttachedBlocks)
 		{
 			if (gameObject.TryGetComponent(out Animator animator))

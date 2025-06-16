@@ -8,7 +8,7 @@ public class Indicators : ICommand
 {
 	public string Command => "indicators";
 
-	public string[] Aliases => ["i", "si"];
+	public string[] Aliases => new []{"i", "si"};
 
 	public string Description => "Shows indicators for invisible objects.";
 

@@ -12,7 +12,7 @@ public static class MapUtils
 
 	public static MapSchematic UntitledMap => LoadedMaps.GetOrAdd(UntitledMapName, () => new(UntitledMapName));
 
-	public static Dictionary<string, MapSchematic> LoadedMaps { get; private set; } = [];
+	public static Dictionary<string, MapSchematic> LoadedMaps { get; private set; } = new Dictionary<string, MapSchematic>();
 
 	public static void SaveMap(string mapName)
 	{

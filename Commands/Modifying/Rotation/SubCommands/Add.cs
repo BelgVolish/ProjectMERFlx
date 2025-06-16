@@ -17,7 +17,7 @@ public class Add : ICommand
 	public string Command => "add";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = [];
+	public string[] Aliases { get; } = Array.Empty<string>();
 
 	/// <inheritdoc/>
 	public string Description => string.Empty;
@@ -27,7 +27,7 @@ public class Add : ICommand
 	{
 		if (!sender.HasAnyPermission($"mpr.rotation"))
 		{
-			response = $"You don't have permission to execute this command. Required permission: mpr.rotation";
+			response = "You don't have permission to execute this command. Required permission: mpr.rotation";
 			return false;
 		}
 

@@ -30,10 +30,7 @@ public class SchematicObject : MonoBehaviour
 	public Vector3 Position
 	{
 		get => transform.position;
-		set
-		{
-			transform.position = value;
-		}
+		set => transform.position = value;
 	}
 
 	/// <summary>
@@ -42,10 +39,7 @@ public class SchematicObject : MonoBehaviour
 	public Quaternion Rotation
 	{
 		get => transform.rotation;
-		set
-		{
-			transform.rotation = value;
-		}
+		set => transform.rotation = value;
 	}
 
 	/// <summary>
@@ -63,10 +57,7 @@ public class SchematicObject : MonoBehaviour
 	public Vector3 Scale
 	{
 		get => transform.localScale;
-		set
-		{
-			transform.localScale = value;
-		}
+		set => transform.localScale = value;
 	}
 
 	public IReadOnlyList<GameObject> AttachedBlocks
@@ -257,10 +248,10 @@ public class SchematicObject : MonoBehaviour
 		Schematic.OnSchematicDestroyed(new(this, Name));
 	}
 
-	internal Dictionary<int, Transform> ObjectFromId = [];
+	internal Dictionary<int, Transform> ObjectFromId = new Dictionary<int, Transform>();
 
-	private readonly List<GameObject> _attachedBlocks = [];
-	private readonly List<NetworkIdentity> _networkIdentities = [];
-	private readonly List<AdminToyBase> _adminToyBases = [];
-	private readonly Dictionary<GameObject, RuntimeAnimatorController> _animators = [];
+	private readonly List<GameObject> _attachedBlocks = new List<GameObject>();
+	private readonly List<NetworkIdentity> _networkIdentities = new List<NetworkIdentity>();
+	private readonly List<AdminToyBase> _adminToyBases = new List<AdminToyBase>();
+	private readonly Dictionary<GameObject, RuntimeAnimatorController> _animators = new Dictionary<GameObject, RuntimeAnimatorController>();
 }

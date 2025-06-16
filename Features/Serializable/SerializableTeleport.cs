@@ -1,4 +1,3 @@
-using System;
 using AdminToys;
 using LabApi.Features.Wrappers;
 using ProjectMER.Features.Extensions;
@@ -11,7 +10,7 @@ namespace ProjectMER.Features.Serializable;
 
 public class SerializableTeleport : SerializableObject, IIndicatorDefinition
 {
-	public List<string> Targets { get; set; } = [];
+	public List<string> Targets { get; set; } = new List<string>();
 
 	public float Cooldown { get; set; } = 5f;
 

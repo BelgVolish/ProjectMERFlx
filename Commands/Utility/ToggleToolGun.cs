@@ -9,7 +9,7 @@ public class ToggleToolGun : ICommand
 {
 	public string Command => "toolgun";
 
-	public string[] Aliases => ["tg"];
+	public string[] Aliases => new []{"tg"};
 
 	public string Description => "Tool gun for spawning and editing objects.";
 

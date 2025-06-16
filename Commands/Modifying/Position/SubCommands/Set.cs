@@ -17,7 +17,7 @@ public class Set : ICommand
 	public string Command => "set";
 
 	/// <inheritdoc/>
-	public string[] Aliases { get; } = [];
+	public string[] Aliases { get; } = Array.Empty<string>();
 
 	/// <inheritdoc/>
 	public string Description => string.Empty;
